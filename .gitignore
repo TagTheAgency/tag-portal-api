@@ -1,2 +1,4 @@
+.classpath
+.settings
 target/
 src/google-oauth2.properties

@@ -65,7 +65,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<version>3.1.0</version>
 		</dependency>
 		
 		<dependency>
@@ -185,7 +185,7 @@
 		<finalName>tag-portal-api</finalName>
 		<resources>
 			<resource>
-				<directory>src/main/webapp</directory>
+				<directory>WebContent</directory>
 			</resource>
 		</resources>
 	</build>
