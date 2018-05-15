@@ -90,7 +90,7 @@ public class AppConfig {
 		
 //		properties.setProperty("spring.jpa.hibernate.ddl-auto", "validate");
 //		properties.setProperty("logging.level.org.hibernate.tool.hbm2ddl", "DEBUG");
-		
+
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
 		return properties;
 	}
