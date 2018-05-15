@@ -6,6 +6,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,6 +21,9 @@ import javax.persistence.TemporalType;
 @Table(name="pitch")
 public class Pitch {
 
+	public enum Status {
+		DEVELOPMENT, WITH_CLIENT, ACCEPTED, DECLINED
+	}
 	
 	private int id;
 	private String title;
@@ -28,6 +33,8 @@ public class Pitch {
 	
 	private String createdUser;
 	private String modifiedUser;
+	
+	private Status status;
 	
 	private List<PitchPage> pages;
 	
@@ -100,6 +107,15 @@ public class Pitch {
 	public void setPages(List<PitchPage> pages) {
 		this.pages = pages;
 	}	
+	
+	@Enumerated(EnumType.STRING)
+	public Status getStatus() {
+		return status;
+	}
+	
+	public void setStatus(Status status) {
+		this.status = status;
+	}
 	
 }
 
