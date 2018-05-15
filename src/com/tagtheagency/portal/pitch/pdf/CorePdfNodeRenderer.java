@@ -141,6 +141,7 @@ public class CorePdfNodeRenderer extends AbstractVisitor implements NodeRenderer
 		paragraph2.getFont().setSize(9);
 		paragraph2.getFont().setColor(GREY);
 		paragraph2.setSpacingAfter(10);
+		
 		for (Element element : elements) {
 			paragraph2.add(element);
 		}
@@ -247,6 +248,7 @@ public class CorePdfNodeRenderer extends AbstractVisitor implements NodeRenderer
 		pdfListItem.getFont().setColor(GREY);
 		elements.push(pdfListItem);
 		
+		
 		visitChildren(listItem);
 		while (elements.peek() != pdfListItem) {
 			pdfListItem.add(elements.pop());
@@ -303,7 +305,10 @@ public class CorePdfNodeRenderer extends AbstractVisitor implements NodeRenderer
 
 	@Override
 	public void visit(Text text) {
-		elements.add(new Chunk(text.getLiteral()));
+		Chunk chunk = new Chunk(text.getLiteral());
+		chunk.setFont(new Font(FontUtils.getFutura()));
+				
+		elements.add(chunk);		
 	}
 
 	@Override

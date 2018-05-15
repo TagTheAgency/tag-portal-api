@@ -33,7 +33,7 @@ public class FontUtils {
 	
 	public static BaseFont getFutura() {
 		if (futura == null) {
-			Font font = FontFactory.getFont("/com/tagtheagency/portal/pitch/Futura.ttc",
+			Font font = FontFactory.getFont("/com/tagtheagency/portal/pitch/Futura-Medium-01.ttf",
 				    BaseFont.IDENTITY_H, BaseFont.EMBEDDED, 0.8f, Font.NORMAL, Color.BLACK);
 			futura = font.getBaseFont();
 		}
