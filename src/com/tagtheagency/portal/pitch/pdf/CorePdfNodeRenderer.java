@@ -140,6 +140,7 @@ public class CorePdfNodeRenderer extends AbstractVisitor implements NodeRenderer
 		paragraph2.setFont(new Font(FontUtils.getFutura()));
 		paragraph2.getFont().setSize(9);
 		paragraph2.getFont().setColor(GREY);
+		paragraph2.setLeading(12);
 		paragraph2.setSpacingAfter(10);
 		
 		for (Element element : elements) {
