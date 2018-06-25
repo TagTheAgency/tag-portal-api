@@ -11,6 +11,14 @@ public class Project {
 	@JsonAlias("is_active")
 	private boolean active;
 	
+	@JsonAlias("is_billable")
+	private boolean billable;
+	
+	@JsonAlias("is_fixed_fee")
+	private boolean fixedFee;
+	
+	private double budget;
+	
 	public long getId() {
 		return id;
 	}
@@ -42,7 +50,24 @@ public class Project {
 		this.active = active;
 	}
 	
+	public boolean isBillable() {
+		return billable;
+	}
+	public void setBillable(boolean billable) {
+		this.billable = billable;
+	}
 	
-	
+	public boolean isFixedFee() {
+		return fixedFee;
+	}
+	public void setFixedFee(boolean fixedFee) {
+		this.fixedFee = fixedFee;
+	}
 
+	public double getBudget() {
+		return budget;
+	}
+	public void setBudget(double budget) {
+		this.budget = budget;
+	}
 }
