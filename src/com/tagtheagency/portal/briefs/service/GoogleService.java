@@ -45,7 +45,7 @@ public class GoogleService {
 	
 	@Autowired RestTemplate restTemplate;
 	
-	public List<Video> getVideoTrends() throws IOException {
+	public List<Video> getVideoTrends(String country) throws IOException {
 		
 		YouTube youtube = new YouTube.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpRequestInitializer() {
             @Override
@@ -62,7 +62,7 @@ public class GoogleService {
 */
         YouTube.Videos.List videosList = youtube.videos().list("snippet,contentDetails,statistics");
         videosList.setChart("mostPopular");
-        videosList.setRegionCode("NZ");
+        videosList.setRegionCode(country);
         videosList.setMaxResults(10l);
         videosList.setKey(apiKey);
         
