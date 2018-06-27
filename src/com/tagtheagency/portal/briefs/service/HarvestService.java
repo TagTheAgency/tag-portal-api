@@ -20,6 +20,9 @@ import com.tagtheagency.portal.briefs.model.Client;
 import com.tagtheagency.portal.briefs.model.ClientList;
 import com.tagtheagency.portal.briefs.model.Project;
 import com.tagtheagency.portal.briefs.model.ProjectList;
+import com.tagtheagency.portal.briefs.model.Task;
+import com.tagtheagency.portal.briefs.model.TaskAssignment;
+import com.tagtheagency.portal.briefs.model.TaskAssignmentList;
 import com.tagtheagency.portal.briefs.model.UserAssignment;
 import com.tagtheagency.portal.briefs.model.UserAssignmentList;
 
@@ -98,6 +101,21 @@ public class HarvestService {
 		        );
 
 			return response.getBody().getUserAssignments();		
+		
+	}
+	
+	public List<TaskAssignment> getTasks(int project) {
+		String url = "https://api.harvestapp.com/v2/projects/"+project+"/task_assignments";
+		
+		ResponseEntity<TaskAssignmentList> response =
+		        restTemplate.exchange(
+		        	url,
+		            HttpMethod.GET, 
+		            getHarvestHeaders(), 
+		            TaskAssignmentList.class
+		        );
+
+			return response.getBody().getTaskAssignments();		
 		
 	}
 	

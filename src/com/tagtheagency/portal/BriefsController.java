@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tagtheagency.portal.briefs.model.Client;
 import com.tagtheagency.portal.briefs.model.Project;
+import com.tagtheagency.portal.briefs.model.TaskAssignment;
 import com.tagtheagency.portal.briefs.model.UserAssignment;
 import com.tagtheagency.portal.briefs.service.HarvestService;
 
@@ -36,8 +37,13 @@ public class BriefsController {
 		return harvestService.getActiveProjects();
 	}
 	
-	@GetMapping("projects/{project}/users")
+	@GetMapping("project/{project}/users")
 	public List<UserAssignment> getUsers(@PathVariable int project) {
 		return harvestService.getUserAssignments(project);
+	}
+	
+	@GetMapping("project/{project}/tasks")
+	public List<TaskAssignment> getTasks(@PathVariable int project) {
+		return harvestService.getTasks(project);
 	}
 }
